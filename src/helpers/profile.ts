@@ -19,7 +19,7 @@ export function createMintProfileTransaction(
   const tx = new Transaction();
 
   // Call the mint_profile function
-  const [profile] = tx.moveCall({
+  tx.moveCall({
     target: `${PACKAGE_ID}::profile::mint_and_transfer_profile`,
     arguments: [
       tx.object(PROFILE_REGISTRY_ID), // registry
