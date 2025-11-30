@@ -207,8 +207,8 @@ const Index = () => {
         };
         setMessages([welcomeMsg]);
 
-        navigate("/chatroom", { 
-          state: { 
+        navigate("/chatroom", {
+          state: {
             profile: {
               username,
               bio: "TaipeiChat user",
@@ -217,7 +217,7 @@ const Index = () => {
               createdAt: Date.now().toString(),
             },
             profileId: result.profileId,
-          } 
+          },
         });
         setRegistrationStep("complete");
       } else {
@@ -301,7 +301,7 @@ const Index = () => {
     try {
       setIsLoading(true);
       const profile = await getUserProfile(account.address);
-      
+
       if (profile) {
         navigate("/chatroom", { state: { profile, profileId: profile.id } });
       } else {
@@ -825,9 +825,6 @@ const Index = () => {
                   <Send className="h-4 w-4" />
                 </Button>
               </div>
-              <p className="text-xs text-muted-foreground mt-2 text-center">
-                This is a frontend demo - messages are displayed locally only
-              </p>
             </div>
           </Card>
         </div>
